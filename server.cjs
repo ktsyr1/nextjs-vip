@@ -1,3 +1,5 @@
+
+
 class API {
     constructor(req, res) {
         this.req = req
@@ -19,7 +21,7 @@ class API {
     req = this.req
     res = this.res
     async #METHOD(method, auth, callback) {
-        if (this.req.method === method) { 
+        if (this.req.method === method) {
             if (auth) {
                 if (typeof callback === "function") callback()
                 else auth()
