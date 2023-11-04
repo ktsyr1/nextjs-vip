@@ -1,6 +1,5 @@
 
-
-class API {
+export default class API {
     constructor(req, res) {
         this.req = req
         this.res = res
@@ -65,5 +64,4 @@ class API {
         this.res.status(status).json(data)
 
     }
-}
-module.exports = API
+} 
