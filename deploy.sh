@@ -6,4 +6,4 @@ git push origin main
     
 npm publish
 
-echo -e " 📦 ${green} تم تحديث ورفعها على Github & npm ${rest} "
+echo -e " 📦 ${green} OK : Github & npm ${rest} "
