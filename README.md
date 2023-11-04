@@ -1,20 +1,17 @@
 # nextjs-vip
-## تنزيل المكتبة 
+ Simple and streamlined, built as a helper library for the [Nextjs](https://nextjs.org) library
+ 
 ```bash
 npm i nextjs-vip
 ```
 
-## بنية المشروع
-```
-/
-|____/server
-    |____{API} {get,post,...}
-#    |____{AuthPage}
-# |____/SEO init
-#    |____<SEO>
-#    |____{SiteMap}
+## Project structure
+- API 
+- sitemap
+- ~~seo~~
+- ~~page-auth~~
 
-```
+
 ## API
 
 syntx
@@ -39,11 +36,46 @@ export default async function API_Send(req, res, next) {
     })
 }
 ```
-|name method| syntx|
-|---|---|
-|get|get(auth? ,callback)
-|post|post(auth? ,callback)
-|put|put(auth? ,callback)
-|delete|delete(auth? ,callback)
-|path|path(auth? ,callback)
-|all|all(auth? ,callback) 
+| name method | syntx                   |
+| ----------- | ----------------------- |
+| get         | get(auth? ,callback)    |
+| post        | post(auth? ,callback)   |
+| put         | put(auth? ,callback)    |
+| delete      | delete(auth? ,callback) |
+| path        | path(auth? ,callback)   |
+| all         | all(auth? ,callback)    |
+
+
+## sitemap 
+Create a site map automatically
+
+syntx
+```js
+// data example
+let data =[
+    {url:"http://example.com/132",date:"2023-11-4"},
+    {url:"http://example.com/131",date:"2023-11-3"}
+]
+sitemap(res, data)
+```
+
+
+example
+```js
+// file: sitemap.xml.js
+
+// imports
+import sitemap from "nextjs-vip/sitemap"
+
+export async function getServerSideProps({ res }) {
+    const request = await fetch(process.env.NEXT_PUBLIC_API)
+    const data = await request.json()
+
+    // generate sitemap.xml
+    sitemap(res, data)
+
+    return { props: {} }
+} 
+
+export default function s() { }
+```
