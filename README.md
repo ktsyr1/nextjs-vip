@@ -6,8 +6,8 @@ npm i nextjs-vip
 ```
 
 ## Project structure
-- API 
-- sitemap
+- [API](#api) 
+- [sitemap](#sitemap)
 - ~~seo~~
 - ~~page-auth~~
 
