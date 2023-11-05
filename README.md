@@ -42,7 +42,7 @@ export default async function API_Send(req, res, next) {
 | post        | post(auth? ,callback)   |
 | put         | put(auth? ,callback)    |
 | delete      | delete(auth? ,callback) |
-| path        | path(auth? ,callback)   |
+| patch        | patch(auth? ,callback)   |
 | all         | all(auth? ,callback)    |
 
 
