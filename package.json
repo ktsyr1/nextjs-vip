@@ -1,10 +1,9 @@
 {
   "name": "nextjs-vip",
-  "version": "1.0.10",
+  "version": "1.0.12",
   "description": "",
   "main": "server.js",
   "type": "module",
-
   "repository": {
     "type": "git",
     "url": "https://github.com/ktsyr1/nextjs-vip"

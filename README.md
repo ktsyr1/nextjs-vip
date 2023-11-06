@@ -1,6 +1,7 @@
 # nextjs-vip
  Simple and streamlined, built as a helper library for the [Nextjs](https://nextjs.org) library
  
+ The library is under development, and if there are any problems or comments, please submit them on [github issues](https://github.com/ktsyr1/nextjs-vip/issues)
 ```bash
 npm i nextjs-vip
 ```
@@ -42,7 +43,7 @@ export default async function API_Send(req, res, next) {
 | post        | post(auth? ,callback)   |
 | put         | put(auth? ,callback)    |
 | delete      | delete(auth? ,callback) |
-| patch        | patch(auth? ,callback)   |
+| patch       | patch(auth? ,callback)  |
 | all         | all(auth? ,callback)    |
 
 
