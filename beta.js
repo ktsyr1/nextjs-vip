@@ -1,6 +1,5 @@
 
-// import API from "nextjs-vip"; 
-export default async function FamilyHomeAPI(req, res, next) {
+export async function Demo(req, res, next) {
     let app = new API(req, res)
 
     app.get("/", true, async () => {
@@ -8,8 +7,7 @@ export default async function FamilyHomeAPI(req, res, next) {
         app.Send(data)
     })
 }
-
-class API {
+export default class APIbeta {
     constructor(req, res) {
         this.req = req
         this.res = res
