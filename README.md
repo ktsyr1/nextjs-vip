@@ -11,6 +11,7 @@ npm i nextjs-vip
 - [sitemap](#sitemap)
 - ~~seo~~
 - ~~page-auth~~
+- ~~icons~~
 
 
 ## API
