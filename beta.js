@@ -13,6 +13,7 @@ export default class APIbeta {
         this.res = res
 
         this.get = this.get.bind(this)
+        this.post = this.post.bind(this)
 
         this.Send = this.Send.bind(this)
 
@@ -22,25 +23,51 @@ export default class APIbeta {
     req = this.req
     res = this.res
     async #METHOD(method, path, auth, callback) {
-
+        let Arguments = Array.from(arguments).slice(1)
+        method = Array.from(arguments)[0]
+        path = Arguments.filter(a => typeof a == "string")[0]
+        auth = Arguments.filter(a => typeof a == "boolean")[0]
+        callback = Arguments.filter(a => typeof a == "function")[0]
         if (this.req.method === method) {
-            if (typeof path === "string") {
+            console.log([method, path, auth, typeof auth, callback])
+            
+            if (path) {
                 let url = this.#asPath(this.req.query)
+                
+                console.log([auth, typeof auth,this.#verifySchema(url, path)])
+
                 if (this.#verifySchema(url, path)) {
-                    if (typeof callback === "function") {
-                        if (auth) callback()
-                    } else auth()
+
+                    if (typeof auth == 'undefined') callback()
+                    else if (auth) callback()
                 }
-            } else if (typeof path === "boolean") {
-                if (path) auth()
-                else this.Send({ auth: false, msg: "not token" })
+            } else {
+                if (typeof auth !== "boolean") callback()
+                else if (auth) callback()
             }
-            else path()
+
         }
+        // if (this.req.method === method) {✅
+        //     if (typeof path === "string") {✅
+        //         let url = this.#asPath(this.req.query)✅
+        //         if (this.#verifySchema(url, path)) {✅
+        //             if (typeof callback === "function") {
+        //                 if (auth) callback()
+        //             } else auth()
+        //         }
+        //     } else if (typeof path === "boolean") {
+        //         if (path) auth()
+        //         else this.Send({ auth: false, msg: "not token" })
+        //     }
+        //     else path()
+        // }
     }
 
     async get(path, auth, callback) {
         return this.#METHOD('GET', path, auth, callback)
+    }
+    async post(path, auth, callback) {
+        return this.#METHOD('POST', path, auth, callback)
     }
     // start code
     #query() {

@@ -1,8 +1,12 @@
 import API from "../server.js"
 import sitemap from "../sitemap.js"
-
+import beta from "../beta.js"
+ 
 (() => {
     let log = t => console.log(` ✅  OK : ${t} \n`)
+
+    let a = new beta({ method: "GET", query: { _id: "1" } }, {})
+    a.get("/app",() => log("test GET"))
 
     let app = new API({ method: "GET", query: { _id: "1" } }, {})
     app.get(() => log("API GET"))
