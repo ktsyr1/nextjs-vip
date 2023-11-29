@@ -10,9 +10,13 @@
   },
   "scripts": {
     "test": "node test/index.js",
-    "deploy": "bash deploy.sh"
+    "deploy": "bash deploy.sh",
+    "release": "standard-version"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "standard-version": "^9.5.0"
+  }
 }
