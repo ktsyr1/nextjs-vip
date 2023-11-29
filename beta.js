@@ -28,16 +28,11 @@ export default class APIbeta {
         path = Arguments.filter(a => typeof a == "string")[0]
         auth = Arguments.filter(a => typeof a == "boolean")[0]
         callback = Arguments.filter(a => typeof a == "function")[0]
+
         if (this.req.method === method) {
-            console.log([method, path, auth, typeof auth, callback])
-            
             if (path) {
                 let url = this.#asPath(this.req.query)
-                
-                console.log([auth, typeof auth,this.#verifySchema(url, path)])
-
                 if (this.#verifySchema(url, path)) {
-
                     if (typeof auth == 'undefined') callback()
                     else if (auth) callback()
                 }
@@ -45,22 +40,7 @@ export default class APIbeta {
                 if (typeof auth !== "boolean") callback()
                 else if (auth) callback()
             }
-
         }
-        // if (this.req.method === method) {✅
-        //     if (typeof path === "string") {✅
-        //         let url = this.#asPath(this.req.query)✅
-        //         if (this.#verifySchema(url, path)) {✅
-        //             if (typeof callback === "function") {
-        //                 if (auth) callback()
-        //             } else auth()
-        //         }
-        //     } else if (typeof path === "boolean") {
-        //         if (path) auth()
-        //         else this.Send({ auth: false, msg: "not token" })
-        //     }
-        //     else path()
-        // }
     }
 
     async get(path, auth, callback) {

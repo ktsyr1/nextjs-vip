@@ -16,6 +16,9 @@ npm i nextjs-vip
 
 ## API
 
+This library was built solely for use in API Routes because it is built to improve developer experience and bring the express.js code structure to nextjs API Routes.
+You can write them within API Routes files
+
 syntx
 ```js
 let app = new API(req, res) 
