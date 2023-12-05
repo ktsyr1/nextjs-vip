@@ -6,7 +6,7 @@ import beta from "../beta.js"
     let log = t => console.log(` ✅  OK : ${t} \n`)
 
     let a = new beta({ method: "GET", query: { _id: "1" ,_:["app"]} }, {})
-    a.get(true,() => log(" ✅ test ✅ GET"))
+    a.get(true,() => log("beta ✅ test ✅ GET"))
 
     let app = new API({ method: "GET", query: { _id: "1" } }, {})
     app.get(() => log("API GET"))
