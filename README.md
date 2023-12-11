@@ -5,13 +5,11 @@
 ```bash
 npm i nextjs-vip
 ```
+More in the [documentation ](https://nextjsvip.netlify.app/docs/getstartd)
 
 ## Project structure
 - [API](#api) 
-- [sitemap](#sitemap)
-- ~~seo~~
-- ~~page-auth~~
-- ~~icons~~
+- [sitemap](#sitemap) 
 
 
 ## API
@@ -58,8 +56,8 @@ syntx
 ```js
 // data example
 let data =[
-    {url:"http://example.com/132",date:"2023-11-4"},
-    {url:"http://example.com/131",date:"2023-11-3"}
+    {url:"http://example.com/132",lastmod:"2023-11-4"},
+    {url:"http://example.com/131",lastmod:"2023-11-3"}
 ]
 sitemap(res, data)
 ```
