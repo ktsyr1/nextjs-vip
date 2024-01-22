@@ -1,3 +1,5 @@
+import API from "nextjs-vip"
+
 
 export function AppVIP(arg) {
     return new API(arg[0], arg[1])
