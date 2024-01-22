@@ -1,4 +1,8 @@
 
+export function AppVIP(arg) {
+    return new API(arg[0], arg[1])
+}
+
 export async function Demo(req, res, next) {
     let app = new API(req, res)
 
